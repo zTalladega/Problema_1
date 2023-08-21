@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Problema_1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Centru Recreational" Height="450" Width="800">
     <Grid>
         <Menu Height="22" Name="menu1" Width="100" Margin="10, 10, 5, 5" HorizontalAlignment="Left" VerticalAlignment="Top" Background="DarkGray" BorderThickness="2">
             <MenuItem Header="Menu" Width="100">
                 <Separator />
                 <MenuItem Header="Clienti">
-                    <MenuItem Header="Adaugare" IsCheckable="true" Click="Clienti_Click_Add" />
-                    <MenuItem Header="Modificare" IsCheckable="true" Click="Clienti_Click_Mod" />
-                    <MenuItem Header="Stergere" IsCheckable="true"  Click="Clienti_Click_Del"/>
-                    <MenuItem Header="Vizualizare" IsCheckable="true" Click="Clienti_Click_Viz"/>
+                    <MenuItem x:Name="clientAdd" Header="Adaugare" IsCheckable="true" Click="Clienti_Click_Add" />
+                    <MenuItem x:Name="clientMod" Header="Modificare" IsCheckable="true" Click="Clienti_Click_Mod" />
+                    <MenuItem x:Name="clientDel" Header="Stergere" IsCheckable="true"  Click="Clienti_Click_Del"/>
+                    <MenuItem x:Name="clientViz" Header="Vizualizare" IsCheckable="true" Click="Clienti_Click_Viz"/>
                 </MenuItem>
                 <Separator />
                 <MenuItem Header="Activitati">
@@ -49,7 +49,7 @@
                 <RowDefinition Height="50*"/>
                 <RowDefinition Height="39*"/>
             </Grid.RowDefinitions>
-            <Label Grid.Column="1" Content="Adaugare Clienti" HorizontalAlignment="Left" Margin="48,0,0,0" VerticalAlignment="Center" Width="163" FontSize="20"/>
+            <Label Grid.Column="1" Content="Informatii Clienti" HorizontalAlignment="Left" Margin="48,0,0,0" VerticalAlignment="Center" Width="163" FontSize="20"/>
             <Label Content="Client ID:" HorizontalAlignment="Left" Margin="50,6,0,0" VerticalAlignment="Top" Height="26" Width="58" Grid.Row="1"/>
             <Label Content="Nume:" HorizontalAlignment="Left" Margin="50,0,0,0" Grid.Row="2" VerticalAlignment="Center" Height="26" Width="45"/>
             <Label Content="Prenume: " HorizontalAlignment="Left" Margin="50,0,0,0" Grid.Row="3" VerticalAlignment="Center" Height="26" Width="63"/>
@@ -66,22 +66,112 @@
             <RadioButton x:Name="radioButtonDA" Grid.Column="1" Content="Da" HorizontalAlignment="Left" Margin="48,0,0,0" Grid.Row="6" VerticalAlignment="Center"/>
             <RadioButton x:Name="radioButtonNU" Grid.Column="1" Content="Nu" HorizontalAlignment="Left" Margin="126,0,0,0" Grid.Row="6" VerticalAlignment="Center"/>
         </Grid>
-        <Grid Name="FormularModificare" Visibility="Visible" Margin="0,52,0,258" HorizontalAlignment="Center" Width="800" RenderTransformOrigin="0.495,0.37">
+        <Grid Name="FormularModificare" Visibility="Collapsed" Margin="0,45,0,217" HorizontalAlignment="Center" Width="800" RenderTransformOrigin="0.495,0.37">
             <Grid.RowDefinitions>
-                <RowDefinition Height="27*"/>
-                <RowDefinition Height="27*"/>
-                <RowDefinition Height="27*"/>
+                <RowDefinition Height="42*"/>
+                <RowDefinition Height="42*"/>
+                <RowDefinition Height="42*"/>
+                <RowDefinition Height="53*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="147*"/>
                 <ColumnDefinition Width="653*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="Nume: " HorizontalAlignment="Center" VerticalAlignment="Center" Height="26" Width="48"/>
-            <Label Content="CNP:" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" Margin="0,13,0,0" Height="25" Width="35"/>
-            <TextBox x:Name="getNume" Grid.Column="1" HorizontalAlignment="Left" Margin="19,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="206" Height="18"/>
-            <TextBox x:Name="getCNP" Grid.Column="1" HorizontalAlignment="Left" Margin="19,17,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" Height="17"/>
-            <Button Grid.Column="1" Content="Cauta" HorizontalAlignment="Left" Margin="19,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="114" Height="21"/>
-            <Button Grid.Column="1" Content="Anuleaza" HorizontalAlignment="Left" Margin="157,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="114"/>
+            <Label Content="Nume: " HorizontalAlignment="Center" VerticalAlignment="Center" Height="26" Width="48" Grid.Row="1"/>
+            <Label Content="CNP:" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Height="25" Width="35"/>
+            <TextBox x:Name="getNume" Grid.Column="1" HorizontalAlignment="Left" Margin="19,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="206" Height="18" Grid.Row="1"/>
+            <TextBox x:Name="getCNP" Grid.Column="1" HorizontalAlignment="Left" Margin="19,0,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" Width="206" Height="17"/>
+            <Button x:Name="cautareClient" Grid.Column="1" Content="Cauta" HorizontalAlignment="Left" Margin="19,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="114" Height="21" Click="cautareClient_Click"/>
+            <Button x:Name="anulareCautare" Grid.Column="1" Content="Anuleaza" HorizontalAlignment="Left" Margin="157,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="114" Click="anulareCautare_Click" Height="20"/>
+            <Label Grid.Column="1" Content="Modificare Clienti" HorizontalAlignment="Left" Margin="35,0,0,0" VerticalAlignment="Center" FontSize="20"/>
+        </Grid>
+        <Grid Name="FormularModif" Visibility="Collapsed" Margin="0,52,0,0" HorizontalAlignment="Left" Width="800" RenderTransformOrigin="0.492,0.482">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="189*"/>
+                <ColumnDefinition Width="611*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="43*"/>
+                <RowDefinition Height="45*"/>
+                <RowDefinition Height="45*"/>
+                <RowDefinition Height="45*"/>
+                <RowDefinition Height="45*"/>
+                <RowDefinition Height="45*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="39*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="1" Content="Modificare Informatii" HorizontalAlignment="Left" Margin="48,0,0,0" VerticalAlignment="Center" Width="198" FontSize="20"/>
+            <Label Content="Client ID:" HorizontalAlignment="Left" Margin="50,6,0,0" VerticalAlignment="Top" Height="26" Width="58" Grid.Row="1"/>
+            <Label Content="Nume:" HorizontalAlignment="Left" Margin="50,0,0,0" Grid.Row="2" VerticalAlignment="Center" Height="26" Width="45"/>
+            <Label Content="Prenume: " HorizontalAlignment="Left" Margin="50,0,0,0" Grid.Row="3" VerticalAlignment="Center" Height="26" Width="63"/>
+            <Label Content="CNP: " HorizontalAlignment="Left" Margin="50,0,0,0" Grid.Row="4" VerticalAlignment="Center" Height="26" Width="39"/>
+            <Label Content="Telefon" HorizontalAlignment="Left" Margin="50,0,0,0" Grid.Row="5" VerticalAlignment="Center" Height="25" Width="48"/>
+            <Label Content="Activ?:" HorizontalAlignment="Left" Margin="50,0,0,0" Grid.Row="6" VerticalAlignment="Center" Height="26" Width="44"/>
+            <TextBox x:Name="inputIDx" Grid.Column="1" HorizontalAlignment="Left" Margin="48,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18" Grid.Row="1"/>
+            <TextBox x:Name="inputNumex" Grid.Column="1" HorizontalAlignment="Left" Margin="48,0,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Height="18"/>
+            <TextBox x:Name="inputPrenumex" Grid.Column="1" HorizontalAlignment="Left" Margin="48,0,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Height="18"/>
+            <TextBox x:Name="inputCNPx" Grid.Column="1" HorizontalAlignment="Left" Margin="48,0,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Height="18"/>
+            <TextBox x:Name="inputTelefonx" Grid.Column="1" HorizontalAlignment="Left" Margin="48,0,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Height="17"/>
+            <Button x:Name="modifButton" Grid.Column="1" Content="Modifica" HorizontalAlignment="Left" Margin="43,0,0,0" Grid.Row="7" VerticalAlignment="Center" Width="130" Height="36" Click="modifButton_Click"/>
+            <Button x:Name="cancelButtonx" Grid.Column="1" Content="Anuleaza" HorizontalAlignment="Left" Margin="257,0,0,0" Grid.Row="7" VerticalAlignment="Center" Width="120" Height="36" Click="cancelButtonx_Click"/>
+            <RadioButton x:Name="radioButtonDAx" Grid.Column="1" Content="Da" HorizontalAlignment="Left" Margin="48,0,0,0" Grid.Row="6" VerticalAlignment="Center"/>
+            <RadioButton x:Name="radioButtonNUx" Grid.Column="1" Content="Nu" HorizontalAlignment="Left" Margin="126,0,0,0" Grid.Row="6" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Name="FormularStergere" Visibility="Collapsed" Margin="0,45,0,217" HorizontalAlignment="Center" Width="800" RenderTransformOrigin="0.495,0.37">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="21*"/>
+                <RowDefinition Height="21*"/>
+                <RowDefinition Height="21*"/>
+                <RowDefinition Height="23*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="147*"/>
+                <ColumnDefinition Width="653*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Nume: " HorizontalAlignment="Center" VerticalAlignment="Top" Height="26" Width="48" Margin="0,5,0,0" Grid.Row="1"/>
+            <Label Content="CNP:" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Height="25" Width="35"/>
+            <TextBox x:Name="getNumex" Grid.Column="1" HorizontalAlignment="Left" Margin="19,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" Height="18" Grid.Row="1"/>
+            <TextBox x:Name="getCNPx" Grid.Column="1" HorizontalAlignment="Left" Margin="19,0,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" Width="206" Height="17"/>
+            <Button x:Name="cautareClientx" Grid.Column="1" Content="Cauta" HorizontalAlignment="Left" Margin="19,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="114" Height="21" Click="cautareClientx_Click"/>
+            <Button x:Name="anulareCautarex" Grid.Column="1" Content="Anuleaza" HorizontalAlignment="Left" Margin="157,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="114" Click="anulareCautarex_Click" Height="20"/>
+            <Label Grid.Column="1" Content="Stergere Clienti" HorizontalAlignment="Left" Margin="19,0,0,0" VerticalAlignment="Center" Width="195" FontSize="20"/>
+        </Grid>
+
+        <Grid Name="StergereClient" Visibility="Collapsed" Margin="0,52,0,0" HorizontalAlignment="Left" Width="800" RenderTransformOrigin="0.492,0.482">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="48*"/>
+                <RowDefinition Height="48*"/>
+                <RowDefinition Height="48*"/>
+                <RowDefinition Height="48*"/>
+                <RowDefinition Height="48*"/>
+                <RowDefinition Height="48*"/>
+                <RowDefinition Height="48*"/>
+                <RowDefinition Height="48*"/>
+                <RowDefinition Height="11*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="161*"/>
+                <ColumnDefinition Width="639*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Client ID: " HorizontalAlignment="Center" VerticalAlignment="Top" Height="26" Width="61" Margin="0,5,0,0" Grid.Row="1"/>
+            <Label Content="Nume: " HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Margin="50,0,0,0" Height="26" Width="48"/>
+            <Label Content="Prenume:" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Height="26" Width="59"/>
+            <Label Content="CNP:" HorizontalAlignment="Left" Margin="51,0,0,0" Grid.Row="4" VerticalAlignment="Center" Height="26" Width="36"/>
+            <Label Content="Telefon:" HorizontalAlignment="Left" Margin="51,0,0,0" Grid.Row="5" VerticalAlignment="Center" Height="26" Width="51"/>
+            <Label Content="Activ?:" HorizontalAlignment="Left" Margin="51,0,0,0" Grid.Row="6" VerticalAlignment="Center" Height="26" Width="44"/>
+            <Label Grid.Column="1" Content="" HorizontalAlignment="Left" Margin="35,5,0,0" VerticalAlignment="Top" Width="204" BorderBrush="Black" Background="#FFE8E8E8" Height="26" Grid.Row="1"/>
+            <Label Grid.Column="1" Content="" HorizontalAlignment="Left" Margin="35,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="204" Background="#FFE8E8E8" Height="26"/>
+            <Label Grid.Column="1" Content="" HorizontalAlignment="Left" Margin="35,0,0,0" Grid.Row="3" VerticalAlignment="Center" Background="#FFE8E8E8" Width="204" Height="26"/>
+            <Label Grid.Column="1" Content="" HorizontalAlignment="Left" Margin="35,0,0,0" Grid.Row="4" VerticalAlignment="Center" Width="204" Background="#FFE8E8E8" Height="26"/>
+            <Label Grid.Column="1" Content="" HorizontalAlignment="Left" Margin="35,0,0,0" Grid.Row="5" VerticalAlignment="Center" Width="204" Background="#FFE8E8E8" Height="26"/>
+            <Label Grid.Column="1" Content="" HorizontalAlignment="Left" Margin="35,0,0,0" Grid.Row="6" VerticalAlignment="Center" Width="69" Background="#FFE8E8E8" Height="26"/>
+            <Label Content="Setati activitatea:" HorizontalAlignment="Left" Margin="50,0,0,0" Grid.Row="7" VerticalAlignment="Center" Height="26" Width="100"/>
+            <RadioButton Grid.Column="1" Content="Activ" HorizontalAlignment="Left" Margin="35,0,0,0" Grid.Row="7" VerticalAlignment="Center" Height="15" Width="45"/>
+            <RadioButton Grid.Column="1" Content="Inactiv" HorizontalAlignment="Left" Margin="137,0,0,0" Grid.Row="7" VerticalAlignment="Center" Height="15" Width="53"/>
+            <Button Grid.Column="1" Content="Confirmare" HorizontalAlignment="Left" Margin="269,0,0,0" Grid.Row="7" VerticalAlignment="Center" Width="80" Height="20"/>
+            <Button Grid.Column="1" Content="Anulare" HorizontalAlignment="Left" Margin="398,0,0,0" Grid.Row="7" VerticalAlignment="Center" Width="80" Height="20"/>
+            <Label Grid.Column="1" Content="Stergere Client" HorizontalAlignment="Left" Margin="35,0,0,0" VerticalAlignment="Center" Width="204" FontSize="20"/>
         </Grid>
     </Grid>
 </Window>

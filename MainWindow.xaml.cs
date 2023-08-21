@@ -27,7 +27,16 @@ namespace Problema_1
         
         private void Clienti_Click_Add(object sender, RoutedEventArgs e)
         {
+
+            clientMod.IsChecked = false;
+            clientDel.IsChecked = false;
+            clientViz.IsChecked = false;
+
             FormularAdaugare.Visibility = Visibility.Visible;
+            FormularStergere.Visibility = Visibility.Collapsed;
+            FormularModificare.Visibility = Visibility.Collapsed;
+            FormularModif.Visibility = Visibility.Collapsed;
+            StergereClient.Visibility = Visibility.Collapsed;
 
         }
 
@@ -56,15 +65,73 @@ namespace Problema_1
             radioButtonNU.IsChecked = false;
         }
 
+        /* -------------------------------------------------------- */
+
         private void Clienti_Click_Mod(object sender, RoutedEventArgs e)
         {
+            clientAdd.IsChecked = false;
+            clientDel.IsChecked = false;
+            clientViz.IsChecked = false;
+
+            FormularAdaugare.Visibility = Visibility.Collapsed;
+            FormularModificare.Visibility = Visibility.Visible;
+            FormularModif.Visibility = Visibility.Collapsed;
+            FormularStergere.Visibility = Visibility.Collapsed;
+            StergereClient.Visibility = Visibility.Collapsed;
+        }
+
+        /* Cautare Clienti si modificare. */
+        private void cautareClient_Click(object sender, RoutedEventArgs e)
+        {
+            string getNumeClient;
+            string getCNP_Client;
+
+            /* In cazul in care il gaseste in baza de date.*/
+            FormularModificare.Visibility = Visibility.Collapsed;
+            FormularModif.Visibility = Visibility.Visible;
 
         }
+
+        /* Anulare cautare si modificare. */
+        private void anulareCautare_Click(object sender, RoutedEventArgs e)
+        {
+            getNume.Text = "";
+            getCNP.Text = "";
+        }
+
+        /* -------------------------------------------------------- */
 
         private void Clienti_Click_Del(object sender, RoutedEventArgs e)
         {
-
+            clientAdd.IsChecked= false;
+            clientMod.IsChecked= false;
+            clientViz.IsChecked= false;
+            FormularStergere.Visibility = Visibility.Visible;
+            StergereClient.Visibility = Visibility.Collapsed;
+            FormularAdaugare.Visibility= Visibility.Collapsed;
+            FormularModificare.Visibility = Visibility.Collapsed;
+            FormularModif.Visibility = Visibility.Collapsed;
         }
+
+        /* Cautare si stergere clienti. */
+        private void cautareClientx_Click(object sender, RoutedEventArgs e)
+        {
+            string getNumeClientDel;
+            string getCNP_ClientDel;
+
+            /* In cazul in care il gaseste in baza de date. */
+            StergereClient.Visibility = Visibility.Visible;
+            FormularStergere.Visibility = Visibility.Collapsed; 
+        }
+
+        /* Anulare cautare si stergere clienti. */
+        private void anulareCautarex_Click(object sender, RoutedEventArgs e)
+        {
+            getNumex.Text = "";
+            getCNPx.Text = "";
+        }
+
+        /* -------------------------------------------------------- */
 
         private void Clienti_Click_Viz(object sender, RoutedEventArgs e)
         {
@@ -107,6 +174,16 @@ namespace Problema_1
         }
 
         private void Rezervari_Click_Viz(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void modifButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cancelButtonx_Click(object sender, RoutedEventArgs e)
         {
 
         }
