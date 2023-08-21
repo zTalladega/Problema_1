@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,11 +47,43 @@ namespace Problema_1
         /* Adaugare clienti in baza de date. */
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            string getInputID;
-            string getInputNume;
-            string getInputPrenume;
-            string getInputCNP;
-            string getInputTelefon;
+            string getInputID = inputID.Text;
+            string getInputNume = inputNume.Text;
+            string getInputPrenume = inputPrenume.Text;
+            string getInputCNP = inputCNP.Text;
+            string getInputTelefon = inputTelefon.Text;
+            int isActive = 0;
+
+            if (radioButtonDA.IsChecked == true) 
+            { 
+                isActive = 1;
+            }else
+            {
+                isActive = 0;
+            }
+
+            string connectDataBase = "Server=localhost;Database=master;Trusted_Connection=True;";
+
+            try
+            {
+                SqlConnection connection = new SqlConnection(connectDataBase);
+                connection.Open();
+
+                string executeCommand = "INSERT INTO dbo.Clienti(Id,Nume,Prenume,CNP,Telefon,Activ?) VALUES(getInputID, getInputName, getInputPrenume, getInputCNP" +
+                    "getInputTelefon, isActive)";
+
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = executeCommand;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable dt = new DataTable("Clienti");
+                adapter.Fill(dt);
+
+            }
+            catch (Exception ex)
+            {
+                
+            }
 
             /* Continue with code. */
 

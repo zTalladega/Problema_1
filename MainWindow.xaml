@@ -63,8 +63,8 @@
             <TextBox x:Name="inputTelefon" Grid.Column="1" HorizontalAlignment="Left" Margin="48,0,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Height="17"/>
             <Button x:Name="saveButton" Grid.Column="1" Content="Salveaza" HorizontalAlignment="Left" Margin="43,0,0,0" Grid.Row="7" VerticalAlignment="Center" Width="130" Height="36" Click="saveButton_Click"/>
             <Button x:Name="cancelButton" Grid.Column="1" Content="Anuleaza" HorizontalAlignment="Left" Margin="257,0,0,0" Grid.Row="7" VerticalAlignment="Center" Width="120" Height="36" Click="cancelButton_Click"/>
-            <RadioButton x:Name="radioButtonDA" Grid.Column="1" Content="Da" HorizontalAlignment="Left" Margin="48,0,0,0" Grid.Row="6" VerticalAlignment="Center"/>
-            <RadioButton x:Name="radioButtonNU" Grid.Column="1" Content="Nu" HorizontalAlignment="Left" Margin="126,0,0,0" Grid.Row="6" VerticalAlignment="Center"/>
+            <RadioButton x:Name="radioButtonDA" Grid.Column="1" IsChecked="False" Content="Da" HorizontalAlignment="Left" Margin="48,0,0,0" Grid.Row="6" VerticalAlignment="Center"/>
+            <RadioButton x:Name="radioButtonNU" Grid.Column="1" IsChecked="False" Content="Nu" HorizontalAlignment="Left" Margin="126,0,0,0" Grid.Row="6" VerticalAlignment="Center"/>
         </Grid>
         <Grid Name="FormularModificare" Visibility="Collapsed" Margin="0,45,0,217" HorizontalAlignment="Center" Width="800" RenderTransformOrigin="0.495,0.37">
             <Grid.RowDefinitions>
