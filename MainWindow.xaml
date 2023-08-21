@@ -33,5 +33,36 @@
                 </MenuItem>
             </MenuItem>
         </Menu>
+        <Grid Name="FormularAdaugare" Visibility="Visible" Margin="0,52,0,0" HorizontalAlignment="Left" Width="800" RenderTransformOrigin="0.492,0.482">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="189*"/>
+                <ColumnDefinition Width="611*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="44*"/>
+                <RowDefinition Height="44*"/>
+                <RowDefinition Height="44*"/>
+                <RowDefinition Height="44*"/>
+                <RowDefinition Height="44*"/>
+                <RowDefinition Height="44*"/>
+                <RowDefinition Height="56*"/>
+                <RowDefinition Height="63*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Client ID:" HorizontalAlignment="Left" Margin="50,0,0,0" VerticalAlignment="Center" Height="26" Width="58"/>
+            <Label Content="Nume:" HorizontalAlignment="Left" Margin="50,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="26" Width="45"/>
+            <Label Content="Prenume: " HorizontalAlignment="Left" Margin="50,0,0,0" Grid.Row="2" VerticalAlignment="Center" Height="26" Width="63"/>
+            <Label Content="CNP: " HorizontalAlignment="Left" Margin="50,0,0,0" Grid.Row="3" VerticalAlignment="Center" Height="26" Width="39"/>
+            <Label Content="Telefon" HorizontalAlignment="Left" Margin="50,0,0,0" Grid.Row="4" VerticalAlignment="Center" Height="25" Width="48"/>
+            <Label Content="Activ?:" HorizontalAlignment="Left" Margin="50,0,0,0" Grid.Row="5" VerticalAlignment="Center" Height="26" Width="44"/>
+            <CheckBox Grid.Column="1" Content="Da" HorizontalAlignment="Left" Margin="48,0,0,0" Grid.Row="5" VerticalAlignment="Center" Height="15" Width="34"/>
+            <CheckBox Grid.Column="1" Content="Nu" HorizontalAlignment="Left" Margin="132,0,0,0" Grid.Row="5" VerticalAlignment="Center" Height="15" Width="36"/>
+            <TextBox x:Name="inputID" Grid.Column="1" HorizontalAlignment="Left" Margin="48,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Height="18"/>
+            <TextBox x:Name="inputNume" Grid.Column="1" HorizontalAlignment="Left" Margin="48,0,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Height="18"/>
+            <TextBox x:Name="inputPrenume" Grid.Column="1" HorizontalAlignment="Left" Margin="48,0,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Height="18"/>
+            <TextBox x:Name="inputCNP" Grid.Column="1" HorizontalAlignment="Left" Margin="48,0,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Height="18"/>
+            <TextBox x:Name="inputTelefon" Grid.Column="1" HorizontalAlignment="Left" Margin="48,0,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Height="17"/>
+            <Button x:Name="saveButton" Grid.Column="1" Content="Salveaza" HorizontalAlignment="Left" Margin="43,0,0,0" Grid.Row="6" VerticalAlignment="Center" Width="130" Height="36" Click="saveButton_Click"/>
+            <Button x:Name="cancelButton" Grid.Column="1" Content="Anuleaza" HorizontalAlignment="Left" Margin="257,0,0,0" Grid.Row="6" VerticalAlignment="Center" Width="120" Height="36" Click="cancelButton_Click"/>
+        </Grid>
     </Grid>
 </Window>

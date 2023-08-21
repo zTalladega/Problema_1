@@ -24,8 +24,20 @@ namespace Problema_1
         {
             InitializeComponent();
         }
-
+        
         private void Clienti_Click_Add(object sender, RoutedEventArgs e)
+        {
+            FormularAdaugare.Visibility = Visibility.Visible;
+        }
+
+        /* Adaugare clienti in baza de date. */
+        private void saveButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /* Anulare operatie. */
+        private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
@@ -84,5 +96,6 @@ namespace Problema_1
         {
 
         }
+
     }
 }
