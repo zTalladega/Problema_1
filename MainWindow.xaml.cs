@@ -28,18 +28,32 @@ namespace Problema_1
         private void Clienti_Click_Add(object sender, RoutedEventArgs e)
         {
             FormularAdaugare.Visibility = Visibility.Visible;
+
         }
 
         /* Adaugare clienti in baza de date. */
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
+            string getInputID;
+            string getInputNume;
+            string getInputPrenume;
+            string getInputCNP;
+            string getInputTelefon;
+
+            /* Continue with code. */
 
         }
 
         /* Anulare operatie. */
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
-
+            inputID.Text = "";
+            inputNume.Text = "";
+            inputPrenume.Text = "";
+            inputCNP.Text = "";
+            inputTelefon.Text = "";
+            radioButtonDA.IsChecked = false;
+            radioButtonNU.IsChecked = false;
         }
 
         private void Clienti_Click_Mod(object sender, RoutedEventArgs e)
