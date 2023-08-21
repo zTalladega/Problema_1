@@ -37,6 +37,8 @@ namespace Problema_1
             FormularModificare.Visibility = Visibility.Collapsed;
             FormularModif.Visibility = Visibility.Collapsed;
             StergereClient.Visibility = Visibility.Collapsed;
+            FormularVizualizare.Visibility = Visibility.Collapsed;
+            VizualizareClient.Visibility = Visibility.Collapsed;
 
         }
 
@@ -78,6 +80,8 @@ namespace Problema_1
             FormularModif.Visibility = Visibility.Collapsed;
             FormularStergere.Visibility = Visibility.Collapsed;
             StergereClient.Visibility = Visibility.Collapsed;
+            FormularVizualizare.Visibility = Visibility.Collapsed;
+            VizualizareClient.Visibility = Visibility.Collapsed;
         }
 
         /* Cautare Clienti si modificare. */
@@ -89,6 +93,7 @@ namespace Problema_1
             /* In cazul in care il gaseste in baza de date.*/
             FormularModificare.Visibility = Visibility.Collapsed;
             FormularModif.Visibility = Visibility.Visible;
+            VizualizareClient.Visibility = Visibility.Collapsed;
 
         }
 
@@ -111,6 +116,8 @@ namespace Problema_1
             FormularAdaugare.Visibility= Visibility.Collapsed;
             FormularModificare.Visibility = Visibility.Collapsed;
             FormularModif.Visibility = Visibility.Collapsed;
+            FormularVizualizare.Visibility = Visibility.Collapsed;
+            VizualizareClient.Visibility = Visibility.Collapsed;
         }
 
         /* Cautare si stergere clienti. */
@@ -121,7 +128,8 @@ namespace Problema_1
 
             /* In cazul in care il gaseste in baza de date. */
             StergereClient.Visibility = Visibility.Visible;
-            FormularStergere.Visibility = Visibility.Collapsed; 
+            FormularStergere.Visibility = Visibility.Collapsed;
+            VizualizareClient.Visibility = Visibility.Collapsed;
         }
 
         /* Anulare cautare si stergere clienti. */
@@ -135,7 +143,31 @@ namespace Problema_1
 
         private void Clienti_Click_Viz(object sender, RoutedEventArgs e)
         {
+            clientAdd.IsChecked = false;
+            clientMod.IsChecked= false;
+            clientDel.IsChecked= false;
+            FormularVizualizare.Visibility = Visibility.Visible;
+            FormularStergere.Visibility = Visibility.Collapsed;
+            StergereClient.Visibility = Visibility.Collapsed;
+            FormularAdaugare.Visibility = Visibility.Collapsed;
+            FormularModificare.Visibility = Visibility.Collapsed;
+            FormularModif.Visibility = Visibility.Collapsed;
+        }
 
+        /* Cautare si vizualizare client.*/
+        private void cautareClienty_Click(object sender, RoutedEventArgs e)
+        {
+            string getNumeClientViz;
+            string getCNP_ClientViz;
+            FormularVizualizare.Visibility = Visibility.Collapsed;
+            VizualizareClient.Visibility = Visibility.Visible;
+        }
+
+        /* Anulare cautare si vizualizare*/
+        private void anulareCautarey_Click(object sender, RoutedEventArgs e)
+        {
+            getNumey.Text = "";
+            getCNPy.Text = "";
         }
 
         private void Activitati_Click_Add(object sender, RoutedEventArgs e)

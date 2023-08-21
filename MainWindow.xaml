@@ -173,5 +173,56 @@
             <Button Grid.Column="1" Content="Anulare" HorizontalAlignment="Left" Margin="398,0,0,0" Grid.Row="7" VerticalAlignment="Center" Width="80" Height="20"/>
             <Label Grid.Column="1" Content="Stergere Client" HorizontalAlignment="Left" Margin="35,0,0,0" VerticalAlignment="Center" Width="204" FontSize="20"/>
         </Grid>
+
+        <Grid Name="FormularVizualizare" Visibility="Collapsed" Margin="0,45,0,217" HorizontalAlignment="Center" Width="800" RenderTransformOrigin="0.495,0.37">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="21*"/>
+                <RowDefinition Height="21*"/>
+                <RowDefinition Height="21*"/>
+                <RowDefinition Height="23*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="147*"/>
+                <ColumnDefinition Width="653*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Nume: " HorizontalAlignment="Center" VerticalAlignment="Top" Height="26" Width="48" Margin="0,5,0,0" Grid.Row="1"/>
+            <Label Content="CNP:" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Height="25" Width="35"/>
+            <TextBox x:Name="getNumey" Grid.Column="1" HorizontalAlignment="Left" Margin="19,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" Height="18" Grid.Row="1"/>
+            <TextBox x:Name="getCNPy" Grid.Column="1" HorizontalAlignment="Left" Margin="19,0,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" Width="206" Height="17"/>
+            <Button x:Name="cautareClienty" Grid.Column="1" Content="Cauta" HorizontalAlignment="Left" Margin="19,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="114" Height="21" Click="cautareClienty_Click"/>
+            <Button x:Name="anulareCautarey" Grid.Column="1" Content="Anuleaza" HorizontalAlignment="Left" Margin="157,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="114" Height="20" Click="anulareCautarey_Click"/>
+            <Label Grid.Column="1" Content="Vizualizare Clienti" HorizontalAlignment="Left" Margin="19,0,0,0" VerticalAlignment="Center" Width="195" FontSize="20"/>
+        </Grid>
+
+        <Grid Name="VizualizareClient" Visibility="Collapsed" Margin="0,52,0,0" HorizontalAlignment="Left" Width="800" RenderTransformOrigin="0.492,0.482">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="48*"/>
+                <RowDefinition Height="48*"/>
+                <RowDefinition Height="48*"/>
+                <RowDefinition Height="48*"/>
+                <RowDefinition Height="48*"/>
+                <RowDefinition Height="48*"/>
+                <RowDefinition Height="48*"/>
+                <RowDefinition Height="48*"/>
+                <RowDefinition Height="11*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="161*"/>
+                <ColumnDefinition Width="639*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Client ID: " HorizontalAlignment="Center" VerticalAlignment="Top" Height="26" Width="61" Margin="0,5,0,0" Grid.Row="1"/>
+            <Label Content="Nume: " HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Margin="50,0,0,0" Height="26" Width="48"/>
+            <Label Content="Prenume:" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Height="26" Width="59"/>
+            <Label Content="CNP:" HorizontalAlignment="Left" Margin="51,0,0,0" Grid.Row="4" VerticalAlignment="Center" Height="26" Width="36"/>
+            <Label Content="Telefon:" HorizontalAlignment="Left" Margin="51,0,0,0" Grid.Row="5" VerticalAlignment="Center" Height="26" Width="51"/>
+            <Label Content="Activ?:" HorizontalAlignment="Left" Margin="51,0,0,0" Grid.Row="6" VerticalAlignment="Center" Height="26" Width="44"/>
+            <Label Grid.Column="1" Content="" HorizontalAlignment="Left" Margin="35,5,0,0" VerticalAlignment="Top" Width="204" BorderBrush="Black" Background="#FFE8E8E8" Height="26" Grid.Row="1"/>
+            <Label Grid.Column="1" Content="" HorizontalAlignment="Left" Margin="35,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="204" Background="#FFE8E8E8" Height="26"/>
+            <Label Grid.Column="1" Content="" HorizontalAlignment="Left" Margin="35,0,0,0" Grid.Row="3" VerticalAlignment="Center" Background="#FFE8E8E8" Width="204" Height="26"/>
+            <Label Grid.Column="1" Content="" HorizontalAlignment="Left" Margin="35,0,0,0" Grid.Row="4" VerticalAlignment="Center" Width="204" Background="#FFE8E8E8" Height="26"/>
+            <Label Grid.Column="1" Content="" HorizontalAlignment="Left" Margin="35,0,0,0" Grid.Row="5" VerticalAlignment="Center" Width="204" Background="#FFE8E8E8" Height="26"/>
+            <Label Grid.Column="1" Content="" HorizontalAlignment="Left" Margin="35,0,0,0" Grid.Row="6" VerticalAlignment="Center" Width="69" Background="#FFE8E8E8" Height="26"/>
+            <Label Grid.Column="1" Content="Vizualizare Client" HorizontalAlignment="Left" Margin="35,0,0,0" VerticalAlignment="Center" Width="204" FontSize="20"/>
+        </Grid>
     </Grid>
 </Window>
